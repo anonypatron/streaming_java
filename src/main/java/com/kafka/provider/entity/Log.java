@@ -22,10 +22,10 @@ public class Log {
     @Column(name = "product_id")
     private String productId;
 
-    @Column(name = "catrgory_id")
+    @Column(name = "category_id")
     private String categoryId;
 
-    @Column(name = "catrgory_code")
+    @Column(name = "category_code")
     private String categoryCode;
 
     @Column(name = "brand")

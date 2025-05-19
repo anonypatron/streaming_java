@@ -1,6 +1,6 @@
-package com.kafka.provider.repository;
+package com.kafka.repository;
 
-import com.kafka.provider.entity.Log;
+import com.kafka.entity.Log;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.kafka.provider.entity;
+package com.kafka.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

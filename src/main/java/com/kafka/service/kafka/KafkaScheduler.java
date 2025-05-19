@@ -1,7 +1,7 @@
-package com.kafka.provider.service;
+package com.kafka.service.kafka;
 
-import com.kafka.provider.entity.Log;
-import com.kafka.provider.repository.LogRepository;
+import com.kafka.entity.Log;
+import com.kafka.repository.LogRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,13 +16,13 @@ public class KafkaScheduler {
     private final LogRepository logRepository;
     private final KafkaLogProducer producer;
 
-    private boolean fileLoadFinish = false;
+    private boolean fileLoadFinish = true;
 
     /*
         보내고 지우는 방식으로 중복제거
      */
     @Transactional
-    @Scheduled(fixedRate = 5000)
+    @Scheduled(fixedRate = 10000)
     public void sendToKafkaAndDelete() {
         if (fileLoadFinish) {
             List<Log> logs = logRepository.findTop100ByOrderByEventTimeAsc();

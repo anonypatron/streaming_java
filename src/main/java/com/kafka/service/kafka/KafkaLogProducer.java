@@ -1,6 +1,6 @@
-package com.kafka.provider.service;
+package com.kafka.service.kafka;
 
-import com.kafka.provider.entity.Log;
+import com.kafka.entity.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class KafkaLogProducer {
 
-    @Autowired
     private final KafkaTemplate<String, Log> kafkaTemplate;
 
+    @Autowired
     public KafkaLogProducer(KafkaTemplate<String, Log> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }

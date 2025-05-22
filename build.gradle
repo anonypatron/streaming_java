@@ -1,0 +1,47 @@
+plugins {
+	id 'java'
+}
+
+group = 'com.streaming.analytics'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter:3.4.3'
+	implementation 'org.springframework.kafka:spring-kafka:3.3.3'
+	implementation 'org.apache.kafka:kafka-streams:3.9.0'
+
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.18.3'
+	implementation 'com.fasterxml.jackson.core:jackson-core:2.18.3'
+	implementation 'com.fasterxml.jackson.core:jackson-annotations:2.18.3'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.4.3'
+	implementation 'com.mysql:mysql-connector-j:9.3.0'
+
+	compileOnly 'org.projectlombok:lombok:1.18.36'
+	annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+
+
+
+}
+
+
+test {
+	useJUnitPlatform()
+}

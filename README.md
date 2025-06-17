@@ -1,3 +1,4 @@
+TO start
 아래 내용을 docker-compose.yml로 만들고 docker실행
 
 services:
